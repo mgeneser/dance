@@ -376,6 +376,26 @@
     font-size: 21px;
   }
 
+  /* Wednesday time column */
+  .slot .timecol {
+    flex-shrink: 0; width: 84px;
+    background: var(--surface-2); color: var(--ink-2);
+    font-weight: 700; font-size: 13px; line-height: 1.2;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 0 6px;
+    border-right: 1px solid var(--line);
+  }
+  .slot.has-mine .timecol { background: var(--accent); color: var(--accent-ink); border-right-color: var(--accent); }
+  .slot.has-friend .timecol { background: var(--friend); color: var(--friend-ink); border-right-color: var(--friend-line); }
+  .slot.compact .timecol { background: transparent; color: var(--muted); border: none; font-weight: 500; }
+  .wed-note {
+    background: var(--accent-bg); color: var(--ink);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius); padding: 12px 16px;
+    font-size: 14px; line-height: 1.45; margin-bottom: 18px;
+  }
+  .wed-note b { font-weight: 700; }
+
   .slot .info {
     flex: 1; padding: 11px 14px; min-width: 0;
     display: flex; flex-direction: column; gap: 3px;
@@ -748,6 +768,37 @@ RECITAL_IMAGES["bein_green"] = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABA
 RECITAL_IMAGES["clearly_now"] = "data:image/jpeg;base64,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";
 Object.values(PROGRAMS).forEach(function(p){p.items.forEach(function(it){if(it.type==="section"){it.dances.forEach(function(d){if(d.name==="Bein' Green")d.cls="L1CA_B";if(d.name==="I Can See Clearly Now")d.cls="L1CA_T";});}});});
 
+/* ===== Wednesday Tech Rehearsal (June 3) ===== */
+const WED_META = {
+  date: "Wednesday, June 3",
+  venue: "Waukee NW Auditorium",
+  note: "No costumes — wear all black dance attire with shoes on before your tech time. Come straight to the auditorium and wait for instructions."
+};
+// Full studio tech schedule; cls set on the classes our dancers are in.
+const WED_SCHEDULE = [
+  { time: "3:20–4:00", name: "Solos & Duets" },
+  { time: "4:00–4:30", name: "Finale" },
+  { time: "4:30–4:45", name: "Level 4/5 Tap" },
+  { time: "4:45–5:00", name: "Level 4/5 Musical Theatre" },
+  { time: "5:00–5:15", name: "Level 3 Classical Ballet" },
+  { time: "5:15–5:30", name: "Level 4 Classical Ballet & Pointe" },
+  { time: "5:30–5:45", name: "Level 5 Classical Ballet & Pointe" },
+  { time: "5:45–6:00", name: "Level 2/3 Musical Theatre" },
+  { time: "6:00–6:30", name: "All Pom Classes", sub: "Born to Be Wild", cls: "L12P", teacher: "Antonia & Emily" },
+  { time: "6:30–6:45", name: "Level 2/3 Hip-Hop", sub: "Space Jam", cls: "L23HH", teacher: "Emily" },
+  { time: "6:45–7:00", name: "Baton" },
+  { time: "7:00–7:45", name: "Level 3 Combo" },
+  { time: "7:45–8:00", name: "Level 3/4 Hip-Hop" },
+  { time: "8:00–8:45", name: "Level 4 Lyrical, Jazz, Tap" },
+  { time: "8:45–9:00", name: "Level 4/5 Jazz" },
+  { time: "9:00–9:15", name: "Level 4/5 Lyrical" },
+  { time: "9:15–9:30", name: "Level 4/5 Hip-Hop" },
+];
+function dancersInClassId(cls) {
+  if (!cls) return [];
+  return DANCER_ORDER.filter(n => (DANCERS[n] || []).includes(cls)).sort((a,b)=>a.localeCompare(b));
+}
+
 
 let savedDancers = [];
 try { savedDancers = JSON.parse(localStorage.getItem("recital_v5_dancers") || "[]"); } catch(e) {}
@@ -827,12 +878,14 @@ function renderPicker() {
   });
 
   const SEG_LABELS = {
+    wednesday: { top: "Wed Tech", sub: "Wed Jun 3" },
     rehearsal: { top: "Rehearsal", sub: "Thu Jun 4" },
     friday:    { top: "Show I",    sub: "Fri Jun 5" },
     saturday:  { top: "Show II",   sub: "Sat Jun 6" },
   };
+  const SHOW_ORDER = ["wednesday", "rehearsal", "friday", "saturday"];
   const showEl = document.getElementById("showChips");
-  showEl.innerHTML = Object.keys(PROGRAMS).map(k => {
+  showEl.innerHTML = SHOW_ORDER.map(k => {
     const l = SEG_LABELS[k];
     return `<button class="seg ${state.show === k ? "active" : ""}" data-s="${k}" aria-pressed="${state.show === k}">${l.top}<span class="seg-sub">${l.sub}</span></button>`;
   }).join("");
@@ -848,8 +901,18 @@ function renderSummary() {
     el.innerHTML = `Pick one or more dancers above to spotlight their numbers. Everyone else's dances stay visible but condensed.`;
     return;
   }
-  const prog = PROGRAMS[state.show];
   let count = 0;
+  if (state.show === "wednesday") {
+    for (const row of WED_SCHEDULE) {
+      const f = dancersInClassId(row.cls);
+      if (state.dancers.some(name => f.includes(name))) count++;
+    }
+    const who = state.dancers.length === 1 ? `<strong>${state.dancers[0]}</strong> has`
+              : `<strong>${dancerLabel()}</strong> have`;
+    el.innerHTML = `${who} <span class="count">${count}</span> tech slot${count === 1 ? "" : "s"} Wednesday.`;
+    return;
+  }
+  const prog = PROGRAMS[state.show];
   for (const item of prog.items) {
     if (item.type !== "section") continue;
     for (const d of item.dances) {
@@ -863,6 +926,18 @@ function renderSummary() {
 }
 
 function renderShowHero() {
+  if (state.show === "wednesday") {
+    return `
+      <div class="show-hero">
+        <div class="kicker">Tech Rehearsal</div>
+        <h2>Wednesday Tech</h2>
+        <div class="meta-row">
+          <div><span class="mlabel">Date</span><span class="value">${WED_META.date}</span></div>
+          <div><span class="mlabel">Venue</span><span class="value">${WED_META.venue}</span></div>
+        </div>
+        <div class="wed-note">${WED_META.note}</div>
+      </div>`;
+  }
   const prog = PROGRAMS[state.show];
   const meta = SHOWS_META[state.show];
   const kicker = state.show === "rehearsal" ? "Dress Rehearsal" : "Show " + (state.show === "friday" ? "I" : "II");
@@ -882,8 +957,49 @@ function renderShowHero() {
   `;
 }
 
+function renderWednesday() {
+  let html = renderShowHero();
+  html += `<div class="section">
+    <div class="section-header"><h3>Studio Tech Order</h3></div>`;
+  for (const row of WED_SCHEDULE) {
+    const friends = dancersInClassId(row.cls);
+    const hasAnyFriend = friends.length > 0;
+    const isMine = state.dancers.length > 0 && state.dancers.some(n => friends.includes(n));
+    const hasFriend = !isMine && hasAnyFriend;
+    const cls = ["slot"];
+    if (!hasAnyFriend) cls.push("compact");
+    if (isMine) cls.push("has-mine");
+    else if (hasFriend) cls.push("has-friend");
+    let tags = "";
+    if (hasAnyFriend && !cls.includes("compact")) {
+      tags = `<div class="friend-tags">` +
+        friends.map(f => `<span class="friend-tag ${state.dancers.includes(f) ? "me" : "friend"}">${f}</span>`).join("") +
+        `</div>`;
+    }
+    const title = row.sub ? `${row.name} — ${row.sub}` : row.name;
+    const meta = row.teacher ? row.teacher : "";
+    html += `
+      <div class="${cls.join(" ")}">
+        <div class="slot-main">
+          <div class="timecol">${row.time}</div>
+          <div class="info">
+            <div class="title">${title}</div>
+            ${meta ? `<div class="meta">${meta}</div>` : ""}
+            ${tags}
+          </div>
+        </div>
+      </div>`;
+  }
+  html += `</div>`;
+  return html;
+}
+
 function renderProgram() {
   const root = document.getElementById("main");
+  if (state.show === "wednesday") {
+    root.innerHTML = renderWednesday();
+    return;
+  }
   const prog = PROGRAMS[state.show];
   let html = renderShowHero();
   let sectionIdx = 0;
@@ -949,6 +1065,7 @@ function renderSlot(d) {
             <dt>Hair</dt><dd>${klass.hair}</dd>
             <dt>Accessories</dt><dd>${klass.accessories}</dd>
             <dt>Class</dt><dd>${klass.label} · ${klass.schedule}</dd>
+            ${klass.rehearsal ? `<dt>Rehearsal</dt><dd>${klass.rehearsal}</dd>` : ""}
           </dl>
         </div>
       </div>`;
@@ -1015,6 +1132,32 @@ function openMyTimes() {
   const body = document.getElementById("modalBody");
   let html = "";
   let shareText = `${dancerLabel()} · Devine Recital schedule\n\n`;
+
+  // Wednesday tech block
+  const wedRows = WED_SCHEDULE
+    .map(row => ({ row, mine: state.dancers.filter(n => dancersInClassId(row.cls).includes(n)) }))
+    .filter(x => x.mine.length);
+  if (wedRows.length) {
+    html += `<div class="show-block">
+      <h3>Wednesday Tech</h3>
+      <div class="show-when">${WED_META.date} · ${WED_META.venue}</div>
+      <div class="arrival-mini"><b>No costumes</b> · all black + shoes on, come straight to the auditorium</div>`;
+    shareText += `Wednesday Tech — ${WED_META.date} (no costumes, all black)\n`;
+    for (const { row, mine } of wedRows) {
+      const tag = multi ? ` — ${mine.join(", ")}` : "";
+      html += `<div class="ql">
+        <div class="qn" style="border-radius:8px;width:auto;padding:0 8px;font-size:13px">${row.time}</div>
+        <div class="qb">
+          <div class="qn-name">${row.sub || row.name}</div>
+          <div class="qn-role">${row.name}${multi ? " · " + mine.join(", ") : ""}</div>
+        </div>
+      </div>`;
+      shareText += `  ${row.time} ${row.sub || row.name}${tag}\n`;
+    }
+    html += `</div>`;
+    shareText += `\n`;
+  }
+
   for (const [key, prog] of Object.entries(PROGRAMS)) {
     const myDances = [];
     for (const item of prog.items) {
